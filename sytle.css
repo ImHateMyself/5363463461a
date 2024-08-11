@@ -1,3 +1,160 @@
-button {
-background: green;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 174, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(0, 174, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 174, 255, 0);
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: url("https://user-uploads.perchance.org/file/2fd89ef31e034f7e111836cbdef4bb31.jpeg");
+  justify-content: center;
+  height: 100vh;
+  background-size: cover; 
+  margin: 0;
+  background-position: center;
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+}
+
+.elements {
+  border-radius: 15px;
+  background-color: #3b42527a;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  padding: 20px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+#tools {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 300px;
+  height: calc(100vh - 20px);
+  overflow: auto;
+  border: 1px solid #4c566a;
+}
+
+#elements-container {
+  margin-left: 320px;
+  margin-top: 10px;
+  overflow-y: auto;
+  padding: 10px;
+  height: calc(100vh - 20px);
+  border: 1px solid #4c566a;
+}
+
+button {      
+  margin: 10px;
+  background-color: #5e81ac;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: pulse 2s infinite;
+}
+
+button:hover {
+  background-color: #81a1c1;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+textarea {
+  background-color: #4c566a;
+  color: #eceff4;
+  margin: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #5e81ac;
+  width: 250px;
+  transition: all 0.3s ease;
+  padding: 10px;
+}
+
+textarea:focus {
+  border-color: #81a1c1;
+  box-shadow: 0 0 8px rgba(94, 129, 172, 0.5);
+}
+
+#GenPic {
+  margin-top: 10px;
+  filter: drop-shadow(0 0 10px #81a1c1);
+  border-radius: 15px;
+  border: 2px solid #5e81ac;
+  margin-left: 20px;
+  transition: all 0.3s ease;      
+  margin-bottom: 5px;
+}
+
+#GenPic:hover {
+  border-radius: 8px;
+}
+
+select {
+  margin: 10px;
+  color: white;
+  background-color: #5e81ac;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 200px;
+}
+
+select:hover {
+  background-color: #81a1c1;
+}
+
+label {
+  color: #eceff4;
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.elements::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.elements::-webkit-scrollbar-track {
+  background: #3b4252;
+}
+
+.elements::-webkit-scrollbar-thumb {
+  background-color: #5e81ac;
+  border-radius: 10px;
 }
