@@ -94,6 +94,7 @@
   width: 300px;
   height: calc(100vh - 20px);
   overflow: auto;
+ overflow-x: hidden;
 }
 
 #elements-container {
