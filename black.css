@@ -21,13 +21,12 @@ body {
   
   .elements {
     border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.7); /* Transparent dark */
+    background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
     padding: 20px;
     transition: all 0.3s ease;
   }
   
-  /* Tools Box */
   #tools {
     position: fixed;
     top: 10px;
@@ -48,7 +47,6 @@ body {
     border: 1px solid #4c566a;
   }
   
-  /* Buttons */
   button {
     margin: 10px;
     background-color: #000000;
@@ -67,8 +65,6 @@ body {
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
   }
-  
-  /* Text Areas and Select Inputs */
   textarea, select {
     background-color: #000000;
     color: rgb(243, 243, 243);
@@ -93,7 +89,6 @@ body {
     margin-right: 10px;
   }
   
-  /* Scrollbars */
   .elements::-webkit-scrollbar {
     width: 0.5em;
   }
@@ -103,12 +98,18 @@ body {
   }
   
   .elements::-webkit-scrollbar-thumb {
-    background-color: #5e81ac;
+    background-color: #000000;
     border-radius: 10px;
   }
   
-  /* Day/Night Toggle Button Styles */
   button#swap-button {
     background-color: #4c566a;
     color: white;
+  }
+  .container {
+    padding: 0px;
+  }
+  .GenPic {
+    border: 2px solid black;
+    padding: 3px;
   }
