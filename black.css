@@ -1,114 +1,292 @@
-/* Global Styles */
-body {
-  font-family: Arial, sans-serif;
-  background: url("https://pixvid.org/images/2024/09/07/w1.jpeg") no-repeat center center fixed;
-  background-size: cover;
-  color: white;
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  overflow: hidden;
-}
+[window.input = {negative:""}, ""]
+<!--если хотите послать нахуй и конкретно пояснить за генератор: мой тг dsfidv-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Context Menu</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-/* Container */
-.container {
-  display: flex;
-  gap: 20px;
-  width: 100%;
-  padding: 20px;
-}
+</head>
+<body>
+<div class="container">
+  
+  <div id="tools" class="elements">
+  <div class="glow"></div>
+    
+      <label><i class='bx bxs-grid'></i>Preset:</label>
+  <select id="selectEl"> 
+    [selectOptions]
+    <option value="a">null</option>
+  </select><br>
+    
+  <label><i class='bx bx-scatter-chart'></i> guidanceScale:</label>
+  <select id="guidanceScales">
+      <option value="7">Default (7)</option>
+      <option>1</option>
+      <option id='d'>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>8</option>
+      <option>9</option>
+      <option>10</option>
+      <option>11</option>
+      <option>12</option>
+      <option>13</option>
+      <option>14</option>
+      <option>15</option>
+      <option>16</option>
+      <option>17</option>
+      <option>18</option>
+      <option>19</option>
+      <option>20</option>
+    </select><br>
+  <label><i class='bx bx-equalizer'></i>resolution:</label>
+  <select id="resolution">  
+    <option>768x512</option>
+    <option>512x768</option>
+    <option>512x512</option>
+  </select><br>
+  <label><i class='bx bx-pie-chart-alt-2' ></i>Pics:</label>
+  <select id="Pics_number">  
+    <option value="1">1</option>
+    <option>3</option>
+    <option>6</option>
+    <option>12</option>
+    <option>24</option>
+    <option>48</option>
+    <option value="96">Зачем тебе так много?</option>
+  </select>
+  <textarea id="pt" placeholder="Prompt"></textarea>
+  <textarea id="antipt" placeholder="Negative Prompt"></textarea>
+  <button id="bt" onclick="nostyl(); gen();"><i class='bx bxs-invader'></i>Generate</button>
+  <hr>
+  <button onClick="zz()" id="copyButton"><i class='bx bx-spreadsheet' ></i>Example</button>
+  <button onclick="resetAll()"><i class='bx bx-spreadsheet' ></i>Reset All</button>
+    <p>Generator Views: [generatorStats("views")].</p>
+  </div>
+  
+  <div id="elements-container" class="elements scrollable-container"></div>
 
-.elements {
-  border-radius: 15px;
-  background-color: rgba(0, 0, 0, 0.7); /* Transparent dark */
-  backdrop-filter: blur(10px);
-  padding: 20px;
-  transition: all 0.3s ease;
-}
+</div>
 
-/* Tools Box */
-#tools {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  width: 300px;
-  height: calc(100vh - 20px);
-  overflow: auto;
-  overflow-x: hidden;
-  border: 1px solid #4c566a;
-}
+</body>
+</html>
 
-#elements-container {
-  margin-left: 320px;
-  margin-top: 10px;
-  overflow-y: auto;
-  padding: 10px;
-  height: calc(100vh - 20px);
-  border: 1px solid #4c566a;
-}
+<script>
+  function zz() {
+      pt.value = ffsf;
+      antipt.value = '(worst quality, low quality:1.3), low-quality, deformed, text, poorly drawn, hilariously bad drawing, bad 3D render';
+      selectEl.value = 'Cute Anime';
+      guidanceScales.value = "2";
+      Pics_number.value = "12"
+    
+  }
+     
+    
+  
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault(); 
+      const contextMenu = document.getElementById('customContextMenu');
+      contextMenu.style.top = `${e.clientY}px`;
+      contextMenu.style.left = `${e.clientX}px`;
+      contextMenu.style.display = 'block';
+    });
+  
+    document.addEventListener('click', function() {
+      const contextMenu = document.getElementById('customContextMenu');
+      contextMenu.style.display = 'none';
+    });
+  
+    function resetAll() {
+      document.getElementById('selectEl').value = "a";
+      document.getElementById('guidanceScales').value = "7";
+      document.getElementById('resolution').value = "768x512";
+      document.getElementById('Pics_number').value = "1";
+      document.getElementById('pt').value = "";
+      document.getElementById('antipt').value = "";
+      document.getElementById('elements-container').innerHTML = "";
+    }
+    function nostyl() {
+      if ([selectEl.value] == "a") {
+        [promptOptions.prompt] = [pt.value];
+        [promptOptions.negativePrompt] = [antipt.value];
+        return "null";
+      } else {
+        [promptOptions.prompt] = [prommpt];
+        [promptOptions.negativePrompt] = [negPromptt];
+        return "anal";
+      }
+    }
+  
+    function gen() {
+      let container = document.getElementById('elements-container');
+  
+      if (container) {
+          container.innerHTML = '';
+      } else {
+          container = document.createElement('div');
+          container.id = 'elements-container';
+          document.body.appendChild(container);
+      }
+  
+      const text = [aasd];
+      for (let i = 0; i < [Pics_number.value]; i++) {
+          const newElement = document.createElement('fz');
+          newElement.style.marginRight = '1px';
+          newElement.innerHTML = text;      
+          container.appendChild(newElement);
+      }
+    }
+    window.onload = createElements;
+  </script>
+<style> 
+.glow {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: rgba(47, 148, 155, 0.39);
+            pointer-events: none;   
+            mix-blend-mode: color-dodge;
+            filter: blur(30px);
+            transition: transform 0.15s ease-out;
+            will-change: transform;
+        }
+</style>
+<script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const glow = document.querySelector(".glow");
+            let mouseX = 0, mouseY = 0;
 
-/* Buttons */
-button {
-  margin: 10px;
-  background-color: #fff;
-  border: none;
-  color: black;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
+            document.addEventListener("mousemove", (event) => {
+                mouseX = event.pageX -75; // Смещаем координаты, чтобы центр элемента находился под курсором
+                mouseY = event.pageY -75;
+            });
 
-button:hover {
-  background-color: #ccc;
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
+            const animate = () => {
+                glow.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+                requestAnimationFrame(animate);
+            };
 
-/* Text Areas and Select Inputs */
-textarea, select {
-  background-color: rgba(255, 255, 255, 0.8);
-  color: black;
-  border-radius: 8px;
-  border: none;
-  width: 250px;
-  padding: 10px;
-  margin: 10px;
-  transition: all 0.3s ease;
-}
+            animate();
+        });
+    </script>
+<style> /* Global Styles */
+  body {
+    font-family: Arial, sans-serif;
+    background: url("https://pixvid.org/images/2024/09/07/w1.jpeg") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+  }
+  
+  /* Container */
+  .container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .elements {
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.7); /* Transparent dark */
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Tools Box */
+  #tools {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 300px;
+    height: calc(100vh - 20px);
+    overflow: auto;
+    overflow-x: hidden;
+    border: 1px solid #4c566a;
+  }
+  
+  #elements-container {
+    margin-left: 320px;
+    margin-top: 10px;
+    overflow-y: auto;
+    padding: 10px;
+    height: calc(100vh - 20px);
+    border: 1px solid #4c566a;
+  }
+  
+  /* Buttons */
+  button {
+    margin: 10px;
+    background-color: #000000;
+    color: rgb(243, 243, 243);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #ccc;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Text Areas and Select Inputs */
+  textarea, select {
+    background-color: #000000;
+    color: rgb(243, 243, 243);
 
-textarea:focus, select:focus {
-  border-color: #81a1c1;
-  box-shadow: 0 0 8px rgba(94, 129, 172, 0.5);
-}
-
-label {
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  margin-right: 10px;
-}
-
-/* Scrollbars */
-.elements::-webkit-scrollbar {
-  width: 0.5em;
-}
-
-.elements::-webkit-scrollbar-track {
-  background: #3b4252;
-}
-
-.elements::-webkit-scrollbar-thumb {
-  background-color: #5e81ac;
-  border-radius: 10px;
-}
-
-/* Day/Night Toggle Button Styles */
-button#swap-button {
-  background-color: #4c566a;
-  color: white;
-}
+    border-radius: 8px;
+    border: none;
+    width: 250px;
+    padding: 10px;
+    margin: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  textarea:focus, select:focus {
+    border-color: #81a1c1;
+    box-shadow: 0 0 8px rgba(94, 129, 172, 0.5);
+  }
+  
+  label {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  /* Scrollbars */
+  .elements::-webkit-scrollbar {
+    width: 0.5em;
+  }
+  
+  .elements::-webkit-scrollbar-track {
+    background: #3b4252;
+  }
+  
+  .elements::-webkit-scrollbar-thumb {
+    background-color: #5e81ac;
+    border-radius: 10px;
+  }
+  
+  /* Day/Night Toggle Button Styles */
+  button#swap-button {
+    background-color: #4c566a;
+    color: white;
+  }</style>
