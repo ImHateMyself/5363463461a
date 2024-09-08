@@ -1,4 +1,5 @@
-body {
+}
+  body {
     font-family: Arial, sans-serif;
     background: url("https://pixvid.org/images/2024/09/07/w1.jpeg") no-repeat center center fixed;
     background-size: cover;
@@ -11,12 +12,10 @@ body {
     overflow: hidden;
   }
   
-  /* Container */
   .container {
     display: flex;
     gap: 20px;
     width: 100%;
-    padding: 20px;
   }
   
   .elements {
@@ -102,12 +101,24 @@ body {
     border-radius: 10px;
   }
   
+  textarea::-webkit-scrollbar {
+    width: 1em;
+  }
+  
+  textarea::-webkit-scrollbar-track {
+    background: #3b4252;
+    cursor:crosshair;
+  }
+  
+  textarea::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    cursor:crosshair;
+    border-radius: 10px;
+  }
+
   button#swap-button {
     background-color: #4c566a;
     color: white;
-  }
-  .container {
-    padding: 0px;
   }
 #GenPic {
    border-radius: 13px; 
