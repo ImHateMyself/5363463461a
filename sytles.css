@@ -8,7 +8,22 @@
         transform: translateX(0) rotate(0deg);
     }
 }
+input {
+  background-color: #4c566a;
+  color: #eceff4;
+  margin: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #5e81ac;
+  padding: 10px;
+  transition: all 0.3s ease;
+  width: 250px;
+}
 
+input:focus {
+  border-color: #81a1c1;
+  box-shadow: 0 0 8px rgba(94, 129, 172, 0.5);
+}
 @keyframes shadowPulse {
     0%, 100% {
         filter: drop-shadow(6px 9px 10px #4400ff);
